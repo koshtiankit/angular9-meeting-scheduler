@@ -1,0 +1,796 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+//@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -ms-transition: $value;
+  transition: $value;
+  -o-transition: $value;
+}
+
+// /* You can add global styles to this file, and also import other style files */
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+.link-text {
+  color: #3f51b5;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #3f51b5;
+  color: white;
+  font-weight: 400;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+$p-color: #333;
+
+body,
+html {
+  font-family: Roboto, sans-serif !important;
+  height: auto;
+  width: 100%;
+  background-color: #f4f5fa;
+  color: $p-color;
+}
+
+.mat-drawer-container {
+  background-color: #f4f5fa;
+}
+
+/*** common margin css start ***/
+.mrg0 {
+  margin: 0 !important;
+}
+
+.mrg0-T {
+  margin-top: 0 !important;
+}
+
+.mrg0-L {
+  margin-left: 0 !important;
+}
+
+.mrg0-R {
+  margin-right: 0 !important;
+}
+
+.mrg0-B {
+  margin-bottom: 0 !important;
+}
+
+.mrg0-TB {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.mrg0-LR {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.mrg2 {
+  margin: 0.2rem !important;
+}
+
+.mrg2-T {
+  margin-top: 0.2rem !important;
+}
+
+.mrg2-L {
+  margin-left: 0.2rem !important;
+}
+
+.mrg2-R {
+  margin-right: 0.2rem !important;
+}
+
+.mrg2-B {
+  margin-bottom: 0.2rem !important;
+}
+
+.mrg2-TB {
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.mrg2-LR {
+  margin-left: 0.2rem !important;
+  margin-right: 0.2rem !important;
+}
+
+.mrg4 {
+  margin: 0.4rem !important;
+}
+
+.mrg4-T {
+  margin-top: 0.4rem !important;
+}
+
+.mrg4-L {
+  margin-left: 0.4rem !important;
+}
+
+.mrg4-R {
+  margin-right: 0.4rem !important;
+}
+
+.mrg4-B {
+  margin-bottom: 0.4rem !important;
+}
+
+.mrg4-TB {
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.mrg4-LR {
+  margin-left: 0.4rem !important;
+  margin-right: 0.4rem !important;
+}
+
+.mrg8 {
+  margin: 0.8rem !important;
+}
+
+.mrg8-T {
+  margin-top: 0.8rem !important;
+}
+
+.mrg8-L {
+  margin-left: 0.8rem !important;
+}
+
+.mrg8-R {
+  margin-right: 0.8rem !important;
+}
+
+.mrg8-B {
+  margin-bottom: 0.8rem !important;
+}
+
+.mrg8-TB {
+  margin-top: 0.8rem !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.mrg8-LR {
+  margin-left: 0.8rem !important;
+  margin-right: 0.8rem !important;
+}
+
+.mrg16 {
+  margin: 1.6rem !important;
+}
+
+.mrg16-T {
+  margin-top: 1.6rem !important;
+}
+
+.mrg18-T {
+  margin-top: 1.8rem !important;
+}
+
+.mrg16-L {
+  margin-left: 1.6rem !important;
+}
+
+.mrg16-R {
+  margin-right: 1.6rem !important;
+}
+
+.mrg16-B {
+  margin-bottom: 1.6rem !important;
+}
+
+.mrg16-TB {
+  margin-top: 1.6rem !important;
+  margin-bottom: 1.6rem !important;
+}
+
+.mrg16-LR {
+  margin-left: 1.6rem !important;
+  margin-right: 1.6rem !important;
+}
+
+.mrg24 {
+  margin: 2.4rem !important;
+}
+
+.mrg20-T {
+  margin-top: 2rem !important;
+}
+
+.mrg24-T {
+  margin-top: 2.4rem !important;
+}
+
+.mrg24-L {
+  margin-left: 2.4rem !important;
+}
+
+.mrg24-R {
+  margin-right: 2.4rem !important;
+}
+
+.mrg24-B {
+  margin-bottom: 2.4rem !important;
+}
+
+.mrg24-TB {
+  margin-top: 2.4rem !important;
+  margin-bottom: 2.4rem !important;
+}
+
+.mrg24-LR {
+  margin-left: 2.4rem !important;
+  margin-right: 2.4rem !important;
+}
+
+.mrg32 {
+  margin: 3.2rem !important;
+}
+
+.mrg32-T {
+  margin-top: 3.2rem !important;
+}
+
+.mrg32-L {
+  margin-left: 3.2rem !important;
+}
+
+.mrg32-R {
+  margin-right: 3.2rem !important;
+}
+
+.mrg32-B {
+  margin-bottom: 3.2rem !important;
+}
+
+.mrg32-TB {
+  margin-top: 3.2rem !important;
+  margin-bottom: 3.2rem !important;
+}
+
+.mrg32-LR {
+  margin-left: 3.2rem !important;
+  margin-right: 3.2rem !important;
+}
+
+.mrg40 {
+  margin: 4rem !important;
+}
+
+.mrg40-T {
+  margin-top: 4rem !important;
+}
+
+.mrg40-L {
+  margin-left: 4rem !important;
+}
+
+.mrg40-R {
+  margin-right: 4rem !important;
+}
+
+.mrg40-B {
+  margin-bottom: 4rem !important;
+}
+
+.mrg40-TB {
+  margin-top: 4rem !important;
+  margin-bottom: 4rem !important;
+}
+
+.mrg40-LR {
+  margin-left: 4rem !important;
+  margin-right: 4rem !important;
+}
+
+.mrg48 {
+  margin: 4.8rem !important;
+}
+
+.mrg48-T {
+  margin-top: 4.8rem !important;
+}
+
+.mrg48-B {
+  margin-bottom: 4.8rem !important;
+}
+
+.mrg48-L {
+  margin-left: 4.8rem !important;
+}
+
+.mrg48-R {
+  margin-right: 4.8rem !important;
+}
+
+.mrg48-TB {
+  margin-top: 4.8rem !important;
+  margin-bottom: 4.8rem !important;
+}
+
+.mrg48-LR {
+  margin-left: 4.8rem !important;
+  margin-right: 4.8rem !important;
+}
+
+.mrg56 {
+  margin: 5.6rem !important;
+}
+
+.mrg56-T {
+  margin-top: 5.6rem !important;
+}
+
+.mrg56-B {
+  margin-bottom: 5.6rem !important;
+}
+
+.mrg56-L {
+  margin-left: 5.6rem !important;
+}
+
+.mrg56-R {
+  margin-right: 5.6rem !important;
+}
+
+.mrg56-TB {
+  margin-top: 5.6rem !important;
+  margin-bottom: 5.6rem !important;
+}
+
+.mrg56-LR {
+  margin-left: 5.6rem !important;
+  margin-right: 5.6rem !important;
+}
+
+.mrg64 {
+  margin: 6.4rem !important;
+}
+
+.mrg64-T {
+  margin-top: 6.4rem !important;
+}
+
+.mrg64-B {
+  margin-bottom: 6.4rem !important;
+}
+
+.mrg64-L {
+  margin-left: 6.4rem !important;
+}
+
+.mrg64-R {
+  margin-right: 6.4rem !important;
+}
+
+.mrg64-TB {
+  margin-top: 6.4rem !important;
+  margin-bottom: 6.4rem !important;
+}
+
+.mrg64-LR {
+  margin-left: 6.4rem !important;
+  margin-right: 6.4rem !important;
+}
+
+.align-center {
+  align-items: center;
+}
+
+/*** common margin css end ***/
+
+/*** common padding css start ***/
+.pd0 {
+  padding: 0 !important;
+}
+
+.pd0-T {
+  padding-top: 0 !important;
+}
+
+.pd0-L {
+  padding-left: 0 !important;
+}
+
+.pd0-R {
+  padding-right: 0 !important;
+}
+
+.pd0-B {
+  padding-bottom: 0 !important;
+}
+
+.pd0-TB {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.pd0-LR {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.pd4 {
+  padding: 0.4rem !important;
+}
+
+.pd4-T {
+  padding-top: 0.4rem !important;
+}
+
+.pd4-L {
+  padding-left: 0.4rem !important;
+}
+
+.pd4-R {
+  padding-right: 0.4rem !important;
+}
+
+.pd4-B {
+  padding-bottom: 0.4rem !important;
+}
+
+.pd4-TB {
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
+}
+
+.pd4-LR {
+  padding-left: 0.4rem !important;
+  padding-right: 0.4rem !important;
+}
+
+.pd8 {
+  padding: 0.8rem !important;
+}
+
+.pd8-T {
+  padding-top: 0.8rem !important;
+}
+
+.pd8-L {
+  padding-left: 0.8rem !important;
+}
+
+.pd8-R {
+  padding-right: 0.8rem !important;
+}
+
+.pd8-B {
+  padding-bottom: 0.8rem !important;
+}
+
+.pd8-TB {
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
+}
+
+.pd8-LR {
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+}
+
+.pd16 {
+  padding: 1.6rem !important;
+}
+
+.pd16-T {
+  padding-top: 1.6rem !important;
+}
+
+.pd16-L {
+  padding-left: 1.6rem !important;
+}
+
+.pd16-R {
+  padding-right: 1.6rem !important;
+}
+
+.pd16-B {
+  padding-bottom: 1.6rem !important;
+}
+
+.pd16-TB {
+  padding-top: 1.6rem !important;
+  padding-bottom: 1.6rem !important;
+}
+
+.pd16-LR {
+  padding-left: 1.6rem !important;
+  padding-right: 1.6rem !important;
+}
+
+.pd24 {
+  padding: 2.4rem !important;
+}
+
+.pd24-T {
+  padding-top: 2.4rem !important;
+}
+
+.pd24-L {
+  padding-left: 2.4rem !important;
+}
+
+.pd24-R {
+  padding-right: 2.4rem !important;
+}
+
+.pd24-B {
+  padding-bottom: 2.4rem !important;
+}
+
+.pd24-TB {
+  padding-top: 2.4rem !important;
+  padding-bottom: 2.4rem !important;
+}
+
+.pd24-LR {
+  padding-left: 2.4rem !important;
+  padding-right: 2.4rem !important;
+}
+
+.pd32 {
+  padding: 3.2rem !important;
+}
+
+.pd32-T {
+  padding-top: 3.2rem !important;
+}
+
+.pd32-L {
+  padding-left: 3.2rem !important;
+}
+
+.pd32-R {
+  padding-right: 3.2rem !important;
+}
+
+.pd32-B {
+  padding-bottom: 3.2rem !important;
+}
+
+.pd32-TB {
+  padding-top: 3.2rem !important;
+  padding-bottom: 3.2rem !important;
+}
+
+.pd32-LR {
+  padding-left: 3.2rem !important;
+  padding-right: 3.2rem !important;
+}
+
+.pd40 {
+  padding: 4rem !important;
+}
+
+.pd40-T {
+  padding-top: 4rem !important;
+}
+
+.pd40-L {
+  padding-left: 4rem !important;
+}
+
+.pd40-R {
+  padding-right: 4rem !important;
+}
+
+.pd40-B {
+  padding-bottom: 4rem !important;
+}
+
+.pd40-TB {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.pd40-LR {
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
+}
+
+.pd48 {
+  padding: 4.8rem !important;
+}
+
+.pd48-T {
+  padding-top: 4.8rem !important;
+}
+
+.pd48-L {
+  padding-left: 4.8rem !important;
+}
+
+.pd48-R {
+  padding-right: 4.8rem !important;
+}
+
+.pd48-B {
+  padding-bottom: 4.8rem !important;
+}
+
+.pd48-TB {
+  padding-top: 4.8rem !important;
+  padding-bottom: 4.8rem !important;
+}
+
+.pd48-LR {
+  padding-left: 4.8rem !important;
+  padding-right: 4.8rem !important;
+}
+
+.pd56 {
+  padding: 5.6rem !important;
+}
+
+.pd56-T {
+  padding-top: 5.6rem !important;
+}
+
+.pd56-L {
+  padding-left: 5.6rem !important;
+}
+
+.pd56-R {
+  padding-right: 5.6rem !important;
+}
+
+.pd56-B {
+  padding-bottom: 5.6rem !important;
+}
+
+.pd56-TB {
+  padding-top: 5.6rem !important;
+  padding-bottom: 5.6rem !important;
+}
+
+.pd56-LR {
+  padding-left: 5.6rem !important;
+  padding-right: 5.6rem !important;
+}
+
+.pd64 {
+  padding: 6.4rem !important;
+}
+
+.pd64-T {
+  padding-top: 6.4rem !important;
+}
+
+.pd64-L {
+  padding-left: 6.4rem !important;
+}
+
+.pd64-R {
+  padding-right: 6.4rem !important;
+}
+
+.pd64-B {
+  padding-bottom: 6.4rem !important;
+}
+
+.pd64-TB {
+  padding-top: 6.4rem !important;
+  padding-bottom: 6.4rem !important;
+}
+
+.pd64-LR {
+  padding-left: 6.4rem !important;
+  padding-right: 6.4rem !important;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.ptp-15 {
+  padding: 0px 15px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-15 {
+  margin-top: 15px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-15 {
+  margin-right: 15px;
+}
+
+.mtb-15 {
+  margin: 15px 0;
+}
+
+.mlr-5 {
+  margin: 0 5px;
+}
+.height-40 {
+  height: 40px;
+}
+
+/*** common padding css end ***/

@@ -1,0 +1,167 @@
+<div fxLayout="column" fxLayoutGap="10px" fxFlex="100%">
+  <div fxLayout="row" fxLayoutGap="10px">
+    <div fxFlex="60"></div>
+    <div fxFlex="40" fxLayoutGap="10px">
+      <mat-form-field fxFlex="60" appearance="outline">
+        <mat-label>{{ "TIMEZONE" | translate: utilService.lang }}</mat-label>
+        <mat-select (selectionChange)="switchTimeZone($event)">
+          <mat-option
+            *ngFor="let timeZone of utilService.timeZones"
+            [value]="timeZone.key"
+          >
+            {{ timeZone.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="40" appearance="outline">
+        <mat-label>{{ "SWITCHLANG" | translate: utilService.lang }}</mat-label>
+
+        <mat-select (selectionChange)="utilService.langSelected($event.value)">
+          <mat-option
+            *ngFor="let lang of utilService.languages"
+            [value]="lang.value"
+          >
+            {{ lang.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <form [formGroup]="schduleMeetingForm">
+    <div fxLayout="row">
+      <div fxFlex="30"></div>
+      <div fxFlex="40">
+        <div fxLayout="column">
+          <div
+            fxLayoutAlign="space-between center"
+            fxLayout="row"
+            fxLayoutGap="17px"
+          >
+            <h2 class="mat-title">
+              {{ "MEETINGTITLE" | translate: utilService.lang }}
+            </h2>
+            <h2 class="mat-title">|</h2>
+            <a routerLink="/meetings"
+              ><h2 class="mat-title link-text">
+                {{ "CHECKMEETINGS" | translate: utilService.lang }}
+              </h2>
+            </a>
+          </div>
+          <mat-form-field fxFlex="33" appearance="outline">
+            <mat-label>{{
+              "FULLNAME" | translate: utilService.lang
+            }}</mat-label>
+            <input
+              formControlName="fullName"
+              matInput
+              placeholder="{{ 'FULLNAME' | translate: utilService.lang }}"
+            />
+
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>{{
+              "MEETINGDATE" | translate: utilService.lang
+            }}</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="meetingDate"
+              placeholder="DD-MM-YYYY"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <!-- <mat-error *ngFor="let validation of formValidations.BirthDate">
+                    <mat-error class="error-message"
+                      *ngIf="AddOrEditcustomerForm.get('BirthDate').hasError(validation.type) && (AddOrEditcustomerForm.get('BirthDate').dirty || AddOrEditcustomerForm.get('BirthDate').touched)">
+                      {{validation.message}}
+                    </mat-error>
+                  </mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex="30">
+            <!-- <mat-label>Start Time</mat-label> -->
+            <mat-label>{{
+              "STARTTIME" | translate: utilService.lang
+            }}</mat-label>
+            <input
+              #startTimeInput
+              matInput
+              placeholder="Start Time"
+              [ngxTimepicker]="editableDialStartTime"
+              readonly
+              formControlName="startTime"
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="startTimeInput.click()"
+            >
+              <mat-icon>alarm</mat-icon>
+            </button>
+          </mat-form-field>
+          <ngx-material-timepicker
+            #editableDialStartTime
+            [enableKeyboardInput]="true"
+          >
+          </ngx-material-timepicker>
+          <mat-form-field appearance="outline" fxFlex="30">
+            <!-- <mat-label>End time</mat-label> -->
+            <mat-label>{{ "ENDTIME" | translate: utilService.lang }}</mat-label>
+            <input
+              #endTimeInput
+              matInput
+              placeholder="Reminder time"
+              [ngxTimepicker]="editableDialEndTime"
+              readonly
+              formControlName="endTime"
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="endTimeInput.click()"
+            >
+              <mat-icon>alarm</mat-icon>
+            </button>
+          </mat-form-field>
+          <ngx-material-timepicker
+            #editableDialEndTime
+            [enableKeyboardInput]="true"
+          >
+          </ngx-material-timepicker>
+        </div>
+
+        <div>
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="saveMeetingData()"
+            [disabled]="saveButtonDisabled"
+          >
+            <mat-icon
+              aria-hidden="false"
+              aria-label="User Account"
+              fontSet="material-icons-outlined"
+              >save_alt
+            </mat-icon>
+            {{ "SAVE" | translate: utilService.lang }}
+          </button>
+        </div>
+      </div>
+      <div fxFlex></div>
+    </div>
+
+    <!-- <div fxLayout="row" fxLayoutAlign="center">
+      
+    </div> -->
+  </form>
+</div>

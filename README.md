@@ -7,6 +7,7 @@
 
 - Top of Angular9
 - Angular Material UI
+- Scss preprocessor
 - Flex Layout for flexible layout
 - Language switcher traslation custom (English, Hindi)
-- Routing and much more etc
+- Routing and PWA support and much more etc

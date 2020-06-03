@@ -11,3 +11,11 @@
 - Flex Layout for flexible layout
 - Language switcher traslation custom (English, Hindi)
 - Routing and PWA support and much more etc
+
+# Screenshots
+
+![App Features](https://postimg.cc/GHcHVrZm)
+
+![App Home](https://postimg.cc/7fmfydkM)
+
+![App Traslated](https://postimg.cc/4Yyn4P4C)
